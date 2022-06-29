@@ -33,7 +33,7 @@ namespace DriversExam.Infrastructure.Migrations
                     b.Property<DateTime>("DateOfUpdate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("QuestionId")
+                    b.Property<int?>("QuestionId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -61,7 +61,7 @@ namespace DriversExam.Infrastructure.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("QuestionId")
+                    b.Property<int?>("QuestionId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -109,8 +109,7 @@ namespace DriversExam.Infrastructure.Migrations
                     b.HasOne("DriversExam.Infrastructure.Entities.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Question");
                 });
@@ -120,8 +119,7 @@ namespace DriversExam.Infrastructure.Migrations
                     b.HasOne("DriversExam.Infrastructure.Entities.Question", "Question")
                         .WithOne("Image")
                         .HasForeignKey("DriversExam.Infrastructure.Entities.Image", "QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Question");
                 });

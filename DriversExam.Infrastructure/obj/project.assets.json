@@ -1133,7 +1133,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/Cellar/dotnet/6.0.103/libexec/sdk/6.0.103/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/cezarygraban/.dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

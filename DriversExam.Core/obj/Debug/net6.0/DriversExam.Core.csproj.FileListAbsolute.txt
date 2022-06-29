@@ -1,0 +1,15 @@
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/bin/Debug/net6.0/DriversExam.Core.deps.json
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/bin/Debug/net6.0/DriversExam.Core.dll
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/bin/Debug/net6.0/DriversExam.Core.pdb
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/bin/Debug/net6.0/DriversExam.Infrastructure.dll
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/bin/Debug/net6.0/DriversExam.Infrastructure.pdb
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.csproj.AssemblyReference.cache
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.AssemblyInfoInputs.cache
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.AssemblyInfo.cs
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.csproj.CoreCompileInputs.cache
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.csproj.CopyComplete
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.dll
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/DriversExam.Core.pdb
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/ref/DriversExam.Core.dll
+/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/Debug/net6.0/refint/DriversExam.Core.dll

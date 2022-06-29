@@ -26,6 +26,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/DriversExam.Core.csproj": {
+                "projectPath": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/DriversExam.Core.csproj"
+              },
               "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Infrastructure/DriversExam.Infrastructure.csproj": {
                 "projectPath": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Infrastructure/DriversExam.Infrastructure.csproj"
               }
@@ -79,7 +82,63 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/Cellar/dotnet/6.0.103/libexec/sdk/6.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/cezarygraban/.dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/DriversExam.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/DriversExam.Core.csproj",
+        "projectName": "DriversExam.Core",
+        "projectPath": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/DriversExam.Core.csproj",
+        "packagesPath": "/Users/cezarygraban/.nuget/packages/",
+        "outputPath": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/cezarygraban/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Infrastructure/DriversExam.Infrastructure.csproj": {
+                "projectPath": "/Users/cezarygraban/Documents/cezary/pjatk/dot_net/DriversExam.API/DriversExam.Infrastructure/DriversExam.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/cezarygraban/.dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -141,7 +200,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/Cellar/dotnet/6.0.103/libexec/sdk/6.0.103/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/cezarygraban/.dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

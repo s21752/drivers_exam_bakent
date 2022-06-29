@@ -18,11 +18,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DriversExam.Core\DriversExam.Core.csproj" />
       <ProjectReference Include="..\DriversExam.Infrastructure\DriversExam.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Controllers" />
     </ItemGroup>
 
 </Project>

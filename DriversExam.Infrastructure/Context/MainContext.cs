@@ -24,15 +24,12 @@ public class MainContext : DbContext
     {
         modelBuilder.Entity<Question>()
             .HasMany(x => x.Answers)
-            .WithOne(x => x.Question)
+            .WithOne(x=>x.Question)
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Question>()
-            .HasOne(x => x.CorrectAnswer);
-        
-        modelBuilder.Entity<Question>()
             .HasOne(x => x.Image)
-            .WithOne(x => x.Question)
+            .WithOne(x=>x.Question)
             .HasForeignKey<Image>(x => x.QuestionId)
             .OnDelete(DeleteBehavior.Cascade);
     }

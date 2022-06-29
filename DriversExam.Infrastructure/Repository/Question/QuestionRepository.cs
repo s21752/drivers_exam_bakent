@@ -65,7 +65,7 @@ public class QuestionRepository : IQuestionRepository
         {
             throw new EntityNotFoundException();
         }
-
+        
         questionToUpdate.Answers = entity.Answers;
         questionToUpdate.Content = entity.Content;
         questionToUpdate.Image = entity.Image;
@@ -82,6 +82,7 @@ public class QuestionRepository : IQuestionRepository
         {
             _mainContext.Question.Remove(question);
             await _mainContext.SaveChangesAsync();
+            return;
         }
 
         throw new EntityNotFoundException();

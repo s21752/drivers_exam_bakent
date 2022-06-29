@@ -66,6 +66,7 @@ public class ImageRepository : IImageRepository
         }
 
         imageToUpdate.Data = entity.Data;
+        imageToUpdate.ImageUrl = entity.ImageUrl;
         imageToUpdate.DateOfUpdate = DateTime.UtcNow;
 
         await _mainContext.SaveChangesAsync();
@@ -82,5 +83,15 @@ public class ImageRepository : IImageRepository
         }
 
         throw new EntityNotFoundException();
+    }
+
+    public async Task<Entities.Image> CreateAndGetAsync(Entities.Image entity)
+    {
+        entity.DateOfCreation = DateTime.UtcNow;
+        entity.DateOfUpdate = DateTime.UtcNow;
+        await _mainContext.AddAsync(entity);
+        await _mainContext.SaveChangesAsync();
+
+        return entity;
     }
 }

@@ -72,4 +72,14 @@ public class AnswerRepository : IAnswerRepository
 
         throw new EntityNotFoundException();
     }
+
+    public async Task<Entities.Answer> CreateAndGetAsync(Entities.Answer entity)
+    {
+        entity.DateOfCreation = DateTime.UtcNow;
+        entity.DateOfUpdate = DateTime.UtcNow;
+        await _mainContext.AddAsync(entity);
+        await _mainContext.SaveChangesAsync();
+
+        return entity;
+    }
 }
