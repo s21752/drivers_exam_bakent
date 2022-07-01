@@ -34,10 +34,23 @@ public class QuestionsController : ControllerBase
         }
     }
 
-    [HttpGet("GetSome")]
-    public async Task<IActionResult> GetQuantityOfQuestions(int? quantity)
+    [HttpGet("GetCount")]
+    public async Task<IActionResult> GetQuestionCount()
     {
-        var questions = await _questionsService.GetNumberOfQuestionsAsync(quantity);
+        return Ok(await _questionsService.CountQuestionsAsync());
+    }
+
+    [HttpGet("GetSomeRandom")]
+    public async Task<IActionResult> GetQuantityOfRandomQuestions(int quantity)
+    {
+        var questions = await _questionsService.GetManyRandomQuestionsAsync(quantity);
+        return Ok(questions);
+    }
+
+    [HttpGet("GetPaginated")]
+    public async Task<IActionResult> GetPaginatedQuestions(int pageSize, int pageIndex)
+    {
+        var questions = await _questionsService.GetPaginatedQuestionsAsync(pageSize, pageIndex);
         return Ok(questions);
     }
     

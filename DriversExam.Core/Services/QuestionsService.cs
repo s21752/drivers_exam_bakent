@@ -21,13 +21,27 @@ public class QuestionsService : IQuestionsService
         _imageRepository = imageRepository;
     }
 
+    public async Task<IEnumerable<QuestionBasicInformationResponseDto>> GetManyRandomQuestionsAsync(int quantity)
+    {
+        var questionsToReturn = await _questionRepository.GetManyRandomQuestionsAsync(quantity);
+        return questionsToReturn.Select(x => x.ParseToQuestionResponseDto());
+    }
+
+    public Task<int> CountQuestionsAsync()
+    {
+        return _questionRepository.CountAsync();
+    }
+
+    public async Task<IEnumerable<QuestionBasicInformationResponseDto>> GetPaginatedQuestionsAsync(int pageSize, int pageIndex)
+    {
+        var questionToReturn = await _questionRepository.GetPaginatedQuestionsAsync(pageSize, pageIndex);
+
+        return questionToReturn.Select(x => x.ParseToQuestionResponseDto());
+    }
+
     public async Task<QuestionBasicInformationResponseDto> GetRandomQuestionAsync()
     {
-        var questions = (await _questionRepository.GetAllAsync()).ToArray();
-
-        var random = new Random();
-
-        var randomQuestion = questions.ElementAtOrDefault(random.Next(0, questions.Length));
+        var randomQuestion = await _questionRepository.GetRandomSingleQuestionAsync();
 
         if (randomQuestion == null)
         {
@@ -35,18 +49,6 @@ public class QuestionsService : IQuestionsService
         }
 
         return randomQuestion.ParseToQuestionResponseDto();
-    }
-
-    public async Task<IEnumerable<QuestionBasicInformationResponseDto>> GetNumberOfQuestionsAsync(int? quantity)
-    {
-        var questions = (await _questionRepository.GetAllAsync()).ToArray();
-
-        var random = new Random();
-
-        // if not all questions are to be returned, shuffle them first, to return random questions each time
-        var questionsToReturn = quantity == null ? questions : questions.OrderBy(order => random.Next()).ToArray();
-
-        return questionsToReturn.Take(quantity ?? questions.Length).Select(x => x.ParseToQuestionResponseDto());
     }
 
     public async Task DeleteQuestionAsync(int questionId)

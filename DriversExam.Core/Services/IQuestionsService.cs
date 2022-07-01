@@ -6,10 +6,13 @@ public interface IQuestionsService
 {
     Task<QuestionBasicInformationResponseDto> GetRandomQuestionAsync();
     
-    // if quantity == null, return all questions info
-    Task<IEnumerable<QuestionBasicInformationResponseDto>> GetNumberOfQuestionsAsync(int? quantity);
+    Task<IEnumerable<QuestionBasicInformationResponseDto>> GetManyRandomQuestionsAsync(int quantity);
+    
+    Task<IEnumerable<QuestionBasicInformationResponseDto>> GetPaginatedQuestionsAsync(int pageSize, int pageIndex);
 
     Task DeleteQuestionAsync(int questionId);
+
+    Task<int> CountQuestionsAsync();
 
     Task AddNewQuestionAsync(AddNewQuestionRequestDto dto);
 
