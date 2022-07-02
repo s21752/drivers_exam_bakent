@@ -1,6 +1,7 @@
 using DriversExam.Core.DTO;
 using DriversExam.Core.Services;
 using DriversExam.Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DriversExam.API.Controllers;
@@ -38,6 +39,19 @@ public class QuestionsController : ControllerBase
     public async Task<IActionResult> GetQuestionCount()
     {
         return Ok(await _questionsService.CountQuestionsAsync());
+    }
+    
+    [HttpGet("GetById")]
+    public async Task<IActionResult> GetById(int questionId)
+    {
+        try
+        {
+            return Ok(await _questionsService.GetByIdAsync(questionId));
+        }
+        catch (EntityNotFoundException)
+        {
+            return BadRequest();
+        }
     }
 
     [HttpGet("GetSomeRandom")]
@@ -77,11 +91,19 @@ public class QuestionsController : ControllerBase
     }
     
     // I am using Patch instead of Put, because I've implemented it in such a way that I can change single field if I want
+    [EnableCors]
     [HttpPatch("Update")]
-    public async Task<IActionResult> UpdateQuestion([FromBody] UpdateQuestionRequestDto dto)
+    public async Task<IActionResult> UpdateQuestion([FromForm] UpdateQuestionRequestDto dto)
     {
         try
         {
+            Console.Out.WriteLine("Request z drivers apa");
+            Console.Out.WriteLine(dto.Id);
+            Console.Out.WriteLine(dto.Content);
+            Console.Out.WriteLine(dto.CorrectAnswer);
+            Console.Out.WriteLine(dto.ImageUrl);
+            Console.Out.WriteLine(dto.Answers);
+
             await _questionsService.UpdateQuestionAsync(dto);
             return NoContent();
         }

@@ -12,6 +12,8 @@ public interface IQuestionsService
 
     Task DeleteQuestionAsync(int questionId);
 
+    Task<QuestionBasicInformationResponseDto> GetByIdAsync(int questionId);
+
     Task<int> CountQuestionsAsync();
 
     Task AddNewQuestionAsync(AddNewQuestionRequestDto dto);

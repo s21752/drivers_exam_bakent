@@ -8,6 +8,10 @@ public class UpdateQuestionRequestDto
     public String? ImageUrl { get; set; }
     public IEnumerable<String>? Answers { get; set; }
 
+    public UpdateQuestionRequestDto()
+    {
+    }
+
     public UpdateQuestionRequestDto(int id, string? content, string? correctAnswer, string? imageUrl, IEnumerable<string>? answers)
     {
         Id = id;

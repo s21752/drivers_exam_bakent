@@ -4,10 +4,18 @@ using DriversExam.Infrastructure.Repository.Answer;
 using DriversExam.Infrastructure.Repository.Image;
 using DriversExam.Infrastructure.Repository.Question;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Primitives;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddCors(o => o.AddPolicy("AllowAnyOrigin", builder =>
+{
+    builder.AllowAnyHeader();
+    builder.AllowAnyMethod();
+    builder.AllowAnyOrigin();
+}));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -24,8 +32,6 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
 builder.Services.AddScoped<IQuestionsService, QuestionsService>();
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,7 +47,10 @@ app.Use(async (context, next) =>
     await next();
 });
 
+
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAnyOrigin");
 
 app.UseAuthorization();
 

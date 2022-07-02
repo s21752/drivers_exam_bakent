@@ -21,6 +21,13 @@ public class QuestionsService : IQuestionsService
         _imageRepository = imageRepository;
     }
 
+    public async Task<QuestionBasicInformationResponseDto> GetByIdAsync(int questionId)
+    {
+        var question = await _questionRepository.GetByIdAsync(questionId);
+
+        return question.ParseToQuestionResponseDto();
+    }
+
     public async Task<IEnumerable<QuestionBasicInformationResponseDto>> GetManyRandomQuestionsAsync(int quantity)
     {
         var questionsToReturn = await _questionRepository.GetManyRandomQuestionsAsync(quantity);
