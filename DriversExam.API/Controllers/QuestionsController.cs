@@ -18,7 +18,7 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpPost("Create")]
-    public async Task<IActionResult> CreateNewQuestion([FromBody] AddNewQuestionRequestDto dto)
+    public async Task<IActionResult> CreateNewQuestion([FromForm] AddNewQuestionRequestDto dto)
     {
         try
         {
@@ -97,13 +97,6 @@ public class QuestionsController : ControllerBase
     {
         try
         {
-            Console.Out.WriteLine("Request z drivers apa");
-            Console.Out.WriteLine(dto.Id);
-            Console.Out.WriteLine(dto.Content);
-            Console.Out.WriteLine(dto.CorrectAnswer);
-            Console.Out.WriteLine(dto.ImageUrl);
-            Console.Out.WriteLine(dto.Answers);
-
             await _questionsService.UpdateQuestionAsync(dto);
             return NoContent();
         }
